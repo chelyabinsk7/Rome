@@ -15,7 +15,7 @@ public class Operations{
 			System.out.println(c);
 	}
 
-	public static List<City> showCity(List<City> list) {
+	public static List<City> showCities(List<City> list) {
 		printCity(list);
 		return list;
 	}
@@ -48,7 +48,7 @@ public class Operations{
 		return list;
 	}
 	
-	public static int maxPopulation(List<City> list) {
+	public static int cityWithMaxPopulation(List<City> list) {
 		int[] arr = new int[list.size()];
 		int i = 0;
 		for (City city : list) {
@@ -67,7 +67,7 @@ public class Operations{
 		return maxPopulation;
 	}
 	
-	public static Map<String, Integer> cityRegions(List<City> list) {
+	public static Map<String, Integer> citiesInRegion(List<City> list) {
 		Map<String, Integer> map = new TreeMap<>(); 
 		for (City city : list) {
 			if (map.containsKey(city.getRegion()))

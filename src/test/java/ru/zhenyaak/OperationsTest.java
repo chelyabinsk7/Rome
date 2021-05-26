@@ -27,8 +27,8 @@ public class OperationsTest {
 	}
 	
 	@Test
-	public void showCityTest() {
-		 Assert.assertFalse(Operations.showCity(startList).isEmpty());
+	public void showCitiesTest() {
+		 Assert.assertFalse(Operations.showCities(startList).isEmpty());
 	}
 
 	@Test
@@ -42,12 +42,12 @@ public class OperationsTest {
 	}
 
 	@Test
-	public void maxPopulationTest() {
-		 Assert.assertEquals(Operations.maxPopulation(startList), 122548);
+	public void cityWithMaxPopulationTest() {
+		 Assert.assertEquals(Operations.cityWithMaxPopulation(startList), 122548);
 	}
 
 	@Test
-	public void cityRegionsTest() {
-		 Assert.assertEquals(Operations.cityRegions(startList).size(), 3);
+	public void citiesInRegionTest() {
+		 Assert.assertEquals(Operations.citiesInRegion(startList).size(), 3);
 	}
 }

@@ -16,7 +16,7 @@ public class ReadFile {
 	private static String path1 = "stat.txt"; // For Mac OS
 	private static File file = new File(path1);
 	
-	public static List<City> list = new ArrayList<>();
+	public static List<City> listReadFile = new ArrayList<>();
 	
     public static List<City> readFile(){
 		try {
@@ -37,20 +37,20 @@ public class ReadFile {
 				while(scnForReadFile.hasNextLine()) {
 					String s = scnForReadFile.nextLine();
 					String[] s1 = s.split(";");
-					list.add(new City(parseInt(s1[0]), s1[1], s1[2], s1[3], parseInt(s1[4]), parseInt(s1[5])));
+					listReadFile.add(new City(parseInt(s1[0]), s1[1], s1[2], s1[3], parseInt(s1[4]), parseInt(s1[5])));
 				}
 			}
 			else if (count == 1) {
 				String s = scnForReadFile.nextLine();
 				String[] s1 = s.split(";");
 				for (int i = 0; i < s1.length; i = i + 6) {
-					list.add(new City(parseInt(s1[i]), s1[i+1], s1[i+2], s1[i+3], parseInt(s1[i+4]), parseInt(s1[i+5])));
+					listReadFile.add(new City(parseInt(s1[i]), s1[i+1], s1[i+2], s1[i+3], parseInt(s1[i+4]), parseInt(s1[i+5])));
 				}
 			}
 			scnForReadFile.close();
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
-		return list;
+		return listReadFile;
     }
 }
