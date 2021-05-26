@@ -1,5 +1,7 @@
 package ru.zhenyaak.model;
 
+import java.util.Objects;
+
 public class City implements Comparable<City> {
 	private int id;
 	private String name;
@@ -73,6 +75,19 @@ public class City implements Comparable<City> {
 	public String toString() {
 		return "City [name=" + name + ", region=" + region + ", district=" + district + ", population=" + population
 				+ ", foundation=" + foundation + "]";
+	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		City city = (City) o;
+		return id == city.id && population == city.population && foundation == city.foundation && Objects.equals(name, city.name) && Objects.equals(region, city.region) && Objects.equals(district, city.district);
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(id, name, region, district, population, foundation);
 	}
 
 	@Override

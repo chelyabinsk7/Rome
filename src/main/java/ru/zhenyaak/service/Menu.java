@@ -1,24 +1,28 @@
 package ru.zhenyaak.service;
 
+import ru.zhenyaak.model.City;
+
+import java.util.List;
 import java.util.Scanner;
 
 public class Menu {
-	
+
+	public static List<City> list = ReadFile.readFile();
+
 	public static void showMenu() {
-		ReadFile.readFile();
     	Scanner abc = new Scanner(System.in);
     	int operation = abc.nextInt();
     	switch (operation) {
-	        case 1:  Operations.showCity();
-	                 break;
-	        case 2:  Operations.citySort();
-	                 break;
-	        case 3:  Operations.districtSort();
-	                 break;
-	        case 4:  Operations.maxPopulation();
-	                 break;
-	        case 5: Operations.cityRegions();
-	                 break;	
+	        case 1:  Operations.showCity(list);
+	                 showMenu();
+	        case 2:  Operations.citySort(list);
+				     showMenu();
+	        case 3:  Operations.districtSort(list);
+				     showMenu();
+	        case 4:  Operations.maxPopulation(list);
+				     showMenu();
+	        case 5:  Operations.cityRegions(list);
+				     showMenu();
 	        default: System.out.println("Выберите существующий пункт меню");
 	        		 showMenu();
     	}
