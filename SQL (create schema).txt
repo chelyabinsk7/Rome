@@ -1,0 +1,26 @@
+CREATE TABLE CITIES 
+(
+id INT PRIMARY KEY,
+name VARCHAR(255),
+region VARCHAR(255),
+district VARCHAR(255),
+population INT,
+foundation INT
+);
+
+INSERT INTO CITIES VALUES(1, 'Адыгейск', 'Адыгея', 'Южный', 12248, 1973);
+INSERT INTO CITIES VALUES(2, 'Майкоп', 'Адыгея', 'Южный', 144246, 1857);
+INSERT INTO CITIES VALUES(3, 'Горно-Алтайск', 'Алтай', 'Сибирский', 56928, 1830);
+INSERT INTO CITIES VALUES(4, 'Абаза', 'Хакасия', 'Сибирский', 17111, 1867);
+INSERT INTO CITIES VALUES(5, 'Абакан', 'Хакасия', 'Сибирский', 165183, 1931);
+INSERT INTO CITIES VALUES(6, 'Агидель', 'Башкортостан', 'Приволжский', 16365, 1980);
+INSERT INTO CITIES VALUES(7, 'Агрыз', 'Татарстан', 'Приволжский', 19299, 1646);
+INSERT INTO CITIES VALUES(8, 'Абдулино', 'Оренбургская область', 'Приволжский', 572819, 1734);
+INSERT INTO CITIES VALUES(9, 'Абдулино', 'Оренбургская область', 'Приволжский', 20663, 1795);
+INSERT INTO CITIES VALUES(10, 'Челябинск', 'Челябинская область', 'Уральский', 1120342, 1734);
+INSERT INTO CITIES VALUES(11, 'Магнитогорск', 'Челябинская область', 'Уральский', 413253, 1743);
+INSERT INTO CITIES VALUES(12, 'Нижний Тагил', 'Свердловская область', 'Уральский', 344656, 1722);
+INSERT INTO CITIES VALUES(13, 'Екатеринбург', 'Свердловская область', 'Уральский', 1495066, 1723);
+INSERT INTO CITIES VALUES(14, 'Алдан', 'Якутия', 'Дальневосточный', 21277, 1924);
+INSERT INTO CITIES VALUES(15, 'Амурск', 'Хабаровский край', 'Дальневосточный', 42977, 1958);
+
