@@ -1,6 +1,5 @@
 package ru.zhenyaak.service;
 
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
@@ -10,24 +9,24 @@ import ru.zhenyaak.model.City;
 
 public class Operations{
 
-	private static void printCity(List<City> list) {
-		for (City c : list)
-			System.out.println(c);
+	private static void printCitiesFile(List<City> list) {
+		for (City city : list)
+			System.out.println(city);
 	}
 
-	public static List<City> showCities(List<City> list) {
-		printCity(list);
+	public static List<City> showCitiesFile(List<City> list) {
+		printCitiesFile(list);
 		return list;
 	}
 
-	public static List<City> citySort(List<City> list) {
+	public static List<City> citiesSortByNameFile(List<City> list) {
 		list.sort(Comparator.comparing((City city) -> city.getName())
 				.thenComparing((City city) -> city.getFoundation()));
-		printCity(list);
+		printCitiesFile(list);
 		return list;
 	}
 
-	public static List<City> districtSort(List<City> list) {
+	public static List<City> citiesSortByDistrictFile(List<City> list) {
 		list.sort(Comparator.comparing((City city) -> city.getDistrict())
 				.thenComparing((City city) -> city.getName()));
 //		ReadFile.list.sort((o1, o2) -> {
@@ -43,12 +42,11 @@ public class Operations{
 //              return o1.getName().compareTo(o2.getName());
 //			}
 //		});
-		for (City c : list)
-			System.out.println(c);
+		printCitiesFile(list);
 		return list;
 	}
 	
-	public static int cityWithMaxPopulation(List<City> list) {
+	public static int cityWithMaxPopulationFile(List<City> list) {
 		int[] arr = new int[list.size()];
 		int i = 0;
 		for (City city : list) {
@@ -67,7 +65,7 @@ public class Operations{
 		return maxPopulation;
 	}
 	
-	public static Map<String, Integer> citiesInRegion(List<City> list) {
+	public static Map<String, Integer> citiesInRegionFile(List<City> list) {
 		Map<String, Integer> map = new TreeMap<>(); 
 		for (City city : list) {
 			if (map.containsKey(city.getRegion()))

@@ -1,7 +1,6 @@
 package ru.zhenyaak.service;
 
 import ru.zhenyaak.model.City;
-import ru.zhenyaak.DAO.CityDAO;
 
 import java.util.List;
 import java.util.Scanner;
@@ -9,7 +8,7 @@ import java.util.Scanner;
 public class Menu {
 
 	public static List<City> listFile = ReadFile.readFile();
-	public static List<City> listDB = CityService.getCityFromDB();
+//	public static List<City> listDB = CityService.showCitiesDB();
 
 	public static int globalMenu() {
     	Scanner abc = new Scanner(System.in);
@@ -30,15 +29,15 @@ public class Menu {
 		int operation = abc.nextInt();
 		if (location == 1){
 			switch (operation) {
-				case 1:  Operations.showCities(listFile);
+				case 1:  Operations.showCitiesFile(listFile);
 					     localMenu(location);
-				case 2:  Operations.citySort(listFile);
+				case 2:  Operations.citiesSortByNameFile(listFile);
 					     localMenu(location);
-				case 3:  Operations.districtSort(listFile);
+				case 3:  Operations.citiesSortByDistrictFile(listFile);
 					     localMenu(location);
-				case 4:  Operations.cityWithMaxPopulation(listFile);
+				case 4:  Operations.cityWithMaxPopulationFile(listFile);
 					     localMenu(location);
-				case 5:  Operations.citiesInRegion(listFile);
+				case 5:  Operations.citiesInRegionFile(listFile);
 					     localMenu(location);
 				default: System.out.println("Выберите существующий пункт меню");
 					     localMenu(location);
@@ -46,15 +45,15 @@ public class Menu {
 		}
 		else if (location == 2){
 			switch (operation) {
-				case 1:  Operations.showCities(listDB);
+				case 1:  CityService.showCitiesDB();
 					     localMenu(location);
-				case 2:  Operations.citySort(listDB);
+				case 2:  CityService.citiesSortByNameDB();
 					     localMenu(location);
-				case 3:  Operations.districtSort(listDB);
+				case 3:  CityService.citiesSortByDistrictDB();
 					     localMenu(location);
-				case 4:  Operations.cityWithMaxPopulation(listDB);
+				case 4:  CityService.cityWithMaxPopulationDB();
 					     localMenu(location);
-				case 5:  Operations.citiesInRegion(listDB);
+				case 5:  CityService.citiesInRegionDB();
 					     localMenu(location);
 				default: System.out.println("Выберите существующий пункт меню");
 					     localMenu(location);

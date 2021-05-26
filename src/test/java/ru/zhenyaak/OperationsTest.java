@@ -28,26 +28,26 @@ public class OperationsTest {
 	
 	@Test
 	public void showCitiesTest() {
-		 Assert.assertFalse(Operations.showCities(startList).isEmpty());
+		 Assert.assertFalse(Operations.showCitiesFile(startList).isEmpty());
 	}
 
 	@Test
-	public void citySortTest() {
+	public void citiesSortByNameFileTest() {
 		sortNameList.add(new City(2, "Абдулино", "Оренбургская область", "Приволжский", 12278, 1573));
 		sortNameList.add(new City(3, "Абдулино", "Оренбургская область", "Приволжский", 12248, 1930));
 		sortNameList.add(new City(1, "Екатеринбург", "Свердловская область", "Уральский", 122548, 1933));
 		sortNameList.add(new City(5, "Магнитогорск", "Челябинская область", "Уральский", 122248, 1973));
 		sortNameList.add(new City(4, "Челябинск", "Челябинская область", "Уральский", 19248, 1972));
-		Assert.assertEquals(sortNameList, Operations.citySort(startList));
+		Assert.assertEquals(sortNameList, Operations.citiesSortByNameFile(startList));
 	}
 
 	@Test
-	public void cityWithMaxPopulationTest() {
-		 Assert.assertEquals(Operations.cityWithMaxPopulation(startList), 122548);
+	public void cityWithMaxPopulationFileTest() {
+		 Assert.assertEquals(Operations.cityWithMaxPopulationFile(startList), 122548);
 	}
 
 	@Test
-	public void citiesInRegionTest() {
-		 Assert.assertEquals(Operations.citiesInRegion(startList).size(), 3);
+	public void citiesInRegionFileTest() {
+		 Assert.assertEquals(Operations.citiesInRegionFile(startList).size(), 3);
 	}
 }
